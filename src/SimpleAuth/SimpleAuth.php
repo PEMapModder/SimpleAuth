@@ -380,13 +380,13 @@ class SimpleAuth extends PluginBase{
 		unset($permissions["simpleauth.lastip"]);
 
 		//Do this because of permission manager plugins
-		if($this->getConfig()->get("disableRegister") === true){
+		if($this->getConfig()->get("disableRegister", true) === true){
 			$permissions["simpleauth.command.register"] = false;
 		}else{
 			$permissions["simpleauth.command.register"] = true;
 		}
 
-		if($this->getConfig()->get("disableLogin") === true){
+		if($this->getConfig()->get("disableLogin", true) === true){
 			$permissions["simpleauth.command.register"] = false;
 		}else{
 			$permissions["simpleauth.command.login"] = true;
